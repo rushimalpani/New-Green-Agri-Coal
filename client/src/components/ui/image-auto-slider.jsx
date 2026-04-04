@@ -15,14 +15,14 @@ import img13 from "../../assets/WhatsApp Image 2026-04-01 at 22.22.50.jpeg";
 import img14 from "../../assets/WhatsApp Image 2026-04-01 at 22.22.51 (1).jpeg";
 import img15 from "../../assets/WhatsApp Image 2026-04-01 at 22.22.51.jpeg";
 
-export const ImageAutoSlider = ({ images: propImages }) => {
-  // Use provided images or default to the 15 plant photos
-  const baseImages = propImages || [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15
+export const ImageAutoSlider = () => {
+  const images = [
+    img1, img2, img3, img4, img5, img6, img7, img8,
+    img9, img10, img11, img12, img13, img14, img15
   ];
 
   // Duplicate images for seamless loop
-  const duplicatedImages = [...baseImages, ...baseImages];
+  const duplicatedImages = [...images, ...images];
 
   return (
     <>
@@ -37,7 +37,7 @@ export const ImageAutoSlider = ({ images: propImages }) => {
         }
 
         .infinite-scroll {
-          animation: scroll-right 40s linear infinite;
+          animation: scroll-right 30s linear infinite;
         }
 
         .scroll-container {
@@ -67,19 +67,19 @@ export const ImageAutoSlider = ({ images: propImages }) => {
         }
       `}</style>
       
-      <div className="w-full relative overflow-hidden flex items-center justify-center">
+      <div className="w-full relative overflow-hidden flex items-center justify-center" style={{ background: "#1E3922", borderRadius: "24px", padding: "48px 0" }}>
         {/* Scrolling images container */}
-        <div className="relative z-10 w-full flex items-center justify-center py-4">
+        <div className="relative w-full flex items-center justify-center py-4">
           <div className="scroll-container w-full">
             <div className="infinite-scroll flex gap-6 w-max">
               {duplicatedImages.map((image, index) => (
                 <div
                   key={index}
-                  className="image-item flex-shrink-0 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-xl border border-white/10"
+                  className="image-item flex-shrink-0 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-xl overflow-hidden shadow-2xl"
                 >
                   <img
                     src={image}
-                    alt={`Gallery image ${(index % baseImages.length) + 1}`}
+                    alt={`Gallery image ${(index % images.length) + 1}`}
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
