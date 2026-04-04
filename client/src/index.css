@@ -21,6 +21,7 @@ img{display:block;max-width:100%}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes blob1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(24px,16px) scale(1.08)}}
 @keyframes blob2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-18px,24px) scale(1.07)}}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:none}}
 @keyframes menuSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 
 /* mobile menu */

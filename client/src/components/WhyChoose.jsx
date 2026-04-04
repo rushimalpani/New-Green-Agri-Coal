@@ -11,7 +11,7 @@ const Dot = () => <span style={{ display: "inline-block", width: 13, height: 13,
 
 export default function WhyChoose() {
   return (
-    <section className="sec" style={{ background: "#f5f4ee", padding: "80px 60px 96px" }}>
+    <section id="why-choose" className="sec" style={{ background: "#f5f4ee", padding: "80px 60px 96px" }}>
       <div style={{ maxWidth: 1220, margin: "0 auto" }}>
         <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 3, color: "#888", textTransform: "uppercase", marginBottom: 6 }}>WHY CHOOSE</p>
         <h2 className="why-h2" style={{ fontSize: "clamp(28px,4vw,54px)", fontWeight: 700, color: "#111", marginBottom: 64, display: "flex", alignItems: "flex-end", flexWrap: "wrap" }}>New Green AgroCoal ?<Dot /></h2>

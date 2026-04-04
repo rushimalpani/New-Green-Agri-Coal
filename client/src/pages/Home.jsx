@@ -7,6 +7,7 @@ import WhyChoose from '../components/WhyChoose';
 import Advantages from '../components/Advantages';
 import Testimonials from '../components/Testimonials';
 import Gallery from '../components/Gallery';
+import WorkspaceGallery from '../components/WorkspaceGallery';
 import ManufacturingUnit from '../components/ManufacturingUnit';
 import Insights from '../components/Insights';
 import Footer from '../components/Footer';
@@ -23,6 +24,7 @@ const Home = () => {
       <Advantages />
       <Testimonials />
       <Gallery />
+      <WorkspaceGallery />
       <ManufacturingUnit />
       <Insights />
       <Footer />

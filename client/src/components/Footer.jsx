@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logoIcon from "../assets/logo_main.png";
 
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
@@ -30,114 +31,115 @@ const Footer = () => {
   };
 
   return (
-    <div className="footer-outer" style={{ background: "#f0efe7", padding: "28px 36px" }}>
-      <footer id="footer" className="footer-card" style={{ background: "#1c4e0e", borderRadius: 20, padding: "54px 52px 0", overflow: "hidden" }}>
-        {/* 3-col grid: brand+links | location | contact form */}
-        <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1.15fr", gap: 48, marginBottom: 48 }}>
+    <div className="footer-outer" style={{ background: "#F9F9F8", padding: "40px 32px" }}>
+      <footer id="footer" style={{ background: "#1E3922", borderRadius: "32px", padding: "64px 64px 32px", overflow: "hidden", color: "#ffffff" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1.2fr", gap: "64px", marginBottom: "64px" }}>
 
-          {/* ── Col 1: Brand, Quick Links, Bank, Socials, Get Quote ── */}
+          {/* Column 1: Brand & Links */}
           <div>
-            {/* Logo */}
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 30 }}>
-              <div style={{ width: 52, height: 52, borderRadius: "50%", background: "radial-gradient(circle at 38% 60%,#9dc940,#2e7d32)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, flexShrink: 0 }}>🌱</div>
-              <div>
-                <div style={{ fontWeight: 800, fontSize: 15, color: "#9dc940", lineHeight: 1.18 }}>New Green</div>
-                <div style={{ fontWeight: 800, fontSize: 15, color: "#9dc940", lineHeight: 1.18 }}>Agro Coal</div>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "32px" }}>
+              <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+                <img src={logoIcon} alt="Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+              </div>
+              <div style={{ fontWeight: 800, fontSize: "18px", lineHeight: "1.1" }}>
+                New Green<br/><span style={{ color: "#86EFAC" }}>Agro Coal</span>
               </div>
             </div>
 
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#8bc34a", marginBottom: 13, letterSpacing: .3 }}>Quick Links</p>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", rowGap: 10, columnGap: 16, marginBottom: 24 }}>
-              {["Products", "Insights", "About us", "Certifications", "Contact Us", "Terms & Conditions"].map(l => (
-                <a key={l} href="#" style={{ color: "rgba(255,255,255,.68)", fontSize: 13.5, transition: "color .2s" }}
-                  onMouseEnter={e => e.currentTarget.style.color = "#8bc34a"}
-                  onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,.68)"}>
-                  {l}
+            <p style={{ fontSize: "14px", fontWeight: 700, color: "#86EFAC", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "20px" }}>Quick Links</p>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+              {["Products", "Insights", "About us", "Contact Us", "Privacy Policy"].map(link => (
+                <a key={link} href={`#${link.toLowerCase().replace(" ", "").replace("aboutus", "about")}`} style={{ color: "rgba(255,255,255,0.7)", fontSize: "15px", textDecoration: "none", transition: "color 0.2s" }}
+                   onMouseEnter={e => e.currentTarget.style.color = "#ffffff"}
+                   onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.7)"}>
+                  {link}
                 </a>
               ))}
             </div>
-
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#8bc34a", marginBottom: 11, letterSpacing: .3 }}>Bank Details</p>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 7 }}>
-              <span style={{ fontSize: 16 }}>🏦</span>
-              <span style={{ color: "rgba(255,255,255,.68)", fontSize: 13.5 }}>Bank of Maharashtra</span>
+            
+            <div style={{ marginTop: "40px" }}>
+              <p style={{ fontSize: "14px", fontWeight: 700, color: "#86EFAC", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "16px" }}>Connect with us</p>
+              <div style={{ display: "flex", gap: "12px" }}>
+                {[
+                  { 
+                    name: "Instagram", 
+                    url: "https://www.instagram.com/newgreenagrocoal?igsh=cG85d2UzcGhlYzRp",
+                    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  },
+                  { 
+                    name: "LinkedIn", 
+                    url: "#",
+                    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  },
+                  { 
+                    name: "Facebook", 
+                    url: "https://www.facebook.com/share/1J2HqT5zLa/",
+                    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                  }
+                ].map(platform => (
+                  <a key={platform.name} href={platform.url} target="_blank" rel="noopener noreferrer" 
+                     style={{ width: "40px", height: "40px", borderRadius: "50%", border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#ffffff", textDecoration: "none", transition: "all 0.3s" }}
+                     onMouseEnter={e => { e.currentTarget.style.background = "#2E7D32"; e.currentTarget.style.borderColor = "#2E7D32"; }}
+                     onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; }}>
+                    {platform.icon}
+                  </a>
+                ))}
+              </div>
             </div>
-            <div style={{ display: "flex", gap: 18, marginBottom: 22, flexWrap: "wrap" }}>
-              <span style={{ color: "rgba(255,255,255,.5)", fontSize: 13 }}>AC &nbsp;60414130761</span>
-              <span style={{ color: "rgba(255,255,255,.5)", fontSize: 13 }}>IFSC &nbsp;MAHB0000035</span>
-            </div>
-
-            {/* Social icons */}
-            <div style={{ display: "flex", gap: 9, marginBottom: 24 }}>
-              {[{ l: "Instagram", ic: "◻" }, { l: "YouTube", ic: "▷" }, { l: "LinkedIn", ic: "in" }, { l: "Facebook", ic: "f" }].map(s => (
-                <a key={s.l} href="#" title={s.l} style={{ width: 36, height: 36, borderRadius: "50%", border: "1.5px solid rgba(255,255,255,.26)", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(255,255,255,.65)", fontSize: 13, fontWeight: 700, transition: "all .2s" }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = "#4caf50"; e.currentTarget.style.color = "#4caf50"; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,.26)"; e.currentTarget.style.color = "rgba(255,255,255,.65)"; }}>
-                  {s.ic}
-                </a>
-              ))}
-            </div>
-
-            {/* Get Quote */}
-            <a href="#footer" style={{ display: "inline-block", padding: "11px 26px", border: "1.5px solid rgba(255,255,255,.38)", borderRadius: 28, color: "rgba(255,255,255,.85)", fontSize: 14, fontWeight: 500, transition: "all .25s" }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = "#4caf50"; e.currentTarget.style.color = "#8bc34a"; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,.38)"; e.currentTarget.style.color = "rgba(255,255,255,.85)"; }}>
-              Get Quote
-            </a>
           </div>
 
-          {/* ── Col 2: Location + Connect ── */}
-          <div className="footer-mid">
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#8bc34a", marginBottom: 16, letterSpacing: .3 }}>Location</p>
-            <div style={{ display: "flex", gap: 9, alignItems: "flex-start", marginBottom: 28 }}>
-              <span style={{ fontSize: 17, flexShrink: 0 }}>🇮🇳</span>
+          {/* Column 2: Location */}
+          <div>
+            <p style={{ fontSize: "14px", fontWeight: 700, color: "#86EFAC", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "24px" }}>Location</p>
+            <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", marginBottom: "32px" }}>
+              <span style={{ fontSize: "24px" }}>🇮🇳</span>
               <div>
-                <p style={{ color: "rgba(255,255,255,.8)", fontSize: 13.5, fontWeight: 600, marginBottom: 5 }}>Factory Address</p>
-                <p style={{ color: "rgba(255,255,255,.52)", fontSize: 13, lineHeight: 1.65 }}>New green agro coal, XM4J+W7,<br />Golegaon, Maharashtra 431807</p>
+                <p style={{ fontSize: "16px", fontWeight: 700, marginBottom: "8px" }}>Factory Address</p>
+                <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.7)", lineHeight: "1.6" }}>
+                  New Green Agro Coal, XM4J+W7,<br/>Golegaon, Maharashtra 431807
+                </p>
               </div>
             </div>
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#8bc34a", marginBottom: 13, letterSpacing: .3 }}>Connect with us</p>
-            {[{ ic: "📞", val: "+91 7058160130", href: "tel:+917058160130" }, { ic: "✉️", val: "newgreenargocoal@gmail.com", href: "mailto:newgreenargocoal@gmail.com" }].map(c => (
-              <div key={c.val} style={{ display: "flex", alignItems: "flex-start", gap: 9, marginBottom: 10 }}>
-                <span style={{ fontSize: 14, flexShrink: 0, marginTop: 2 }}>{c.ic}</span>
-                <a href={c.href} style={{ color: "rgba(255,255,255,.62)", fontSize: 13, lineHeight: 1.5, wordBreak: "break-word", transition: "color .2s" }}
-                  onMouseEnter={e => e.currentTarget.style.color = "#8bc34a"}
-                  onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,.62)"}>
-                  {c.val}
-                </a>
+            
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <span style={{ color: "#86EFAC" }}>✉️</span>
+                <a href="mailto:newgreenargocoal@gmail.com" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none", fontSize: "15px" }}>newgreenargocoal@gmail.com</a>
               </div>
-            ))}
+              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <span style={{ color: "#86EFAC" }}>📞</span>
+                <a href="tel:+917058160130" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none", fontSize: "15px" }}>+91 70581 60130</a>
+              </div>
+            </div>
           </div>
 
-          {/* ── Col 3: Contact Form ── */}
-          <div style={{ background: "rgba(0,0,0,.22)", borderRadius: 14, padding: "26px 26px 30px" }}>
-            <h3 style={{ color: "#fff", fontSize: 21, fontWeight: 700, marginBottom: 20 }}>Contact Us</h3>
-            {status === 'success' && <div style={{ background: "rgba(76,175,80,.18)", border: "1px solid #4caf50", borderRadius: 8, padding: "9px 13px", marginBottom: 14, color: "#8bc34a", fontSize: 13, fontWeight: 600 }}>✅ Message sent successfully!</div>}
-            {status === 'error' && <div style={{ background: "rgba(244,67,54,.18)", border: "1px solid #f44336", borderRadius: 8, padding: "9px 13px", marginBottom: 14, color: "#ef9a9a", fontSize: 13, fontWeight: 600 }}>❌ Failed to send. Please try again.</div>}
-            <form onSubmit={handleSubmit}>
-              {[{ ph: "Your name", k: "name", t: "text" }, { ph: "example@company.com", k: "email", t: "email" }, { ph: "Contact Number", k: "phone", t: "tel" }].map(f => (
-                <div key={f.k} style={{ marginBottom: 16 }}>
-                  <input type={f.t} name={f.k} placeholder={f.ph} value={formData[f.k]} onChange={handleChange}
-                    style={{ width: "100%", background: "transparent", border: "none", borderBottom: "1px solid rgba(255,255,255,.22)", color: "rgba(255,255,255,.78)", fontSize: 13.5, padding: "7px 0 5px", outline: "none" }} />
-                </div>
-              ))}
-              <div style={{ marginBottom: 18 }}>
-                <textarea name="message" placeholder="Leave us a Message" rows={3} value={formData.message} onChange={handleChange}
-                  style={{ width: "100%", background: "transparent", border: "none", borderBottom: "1px solid rgba(255,255,255,.22)", color: "rgba(255,255,255,.78)", fontSize: 13.5, padding: "7px 0 5px", outline: "none", resize: "none" }} />
-              </div>
-              <button type="submit" disabled={status === 'sending'} style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#4caf50", color: "#fff", border: "none", padding: "11px 22px", borderRadius: 34, fontSize: 15, fontWeight: 700, transition: "all .25s", boxShadow: "0 4px 16px rgba(76,175,80,.38)", cursor: "pointer", opacity: status === 'sending' ? 0.6 : 1 }}
-                onMouseEnter={e => { e.currentTarget.style.background = "#388e3c"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "#4caf50"; e.currentTarget.style.transform = "none"; }}>
-                <span style={{ width: 30, height: 30, borderRadius: "50%", background: "rgba(255,255,255,.22)", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: 15 }}>↗</span>
-                {status === 'sending' ? 'Sending...' : 'Submit'}
+          {/* Column 3: Contact Form */}
+          <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: "24px", padding: "32px" }}>
+            <h3 style={{ fontSize: "24px", fontWeight: 700, marginBottom: "24px" }}>Send a Message</h3>
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange}
+                style={{ background: "rgba(255,255,255,0.1)", border: "none", borderRadius: "12px", padding: "12px 16px", color: "#ffffff", outline: "none" }} />
+              <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange}
+                style={{ background: "rgba(255,255,255,0.1)", border: "none", borderRadius: "12px", padding: "12px 16px", color: "#ffffff", outline: "none" }} />
+              <textarea name="message" placeholder="How can we help?" rows={3} value={formData.message} onChange={handleChange}
+                style={{ background: "rgba(255,255,255,0.1)", border: "none", borderRadius: "12px", padding: "12px 16px", color: "#ffffff", outline: "none", resize: "none" }} />
+              <button type="submit" style={{ background: "#2E7D32", color: "#ffffff", border: "none", borderRadius: "12px", padding: "14px", fontWeight: 700, cursor: "pointer", transition: "background 0.3s" }}
+                onMouseEnter={e => e.currentTarget.style.background = "#1B5E20"}
+                onMouseLeave={e => e.currentTarget.style.background = "#2E7D32"}>
+                {status === 'sending' ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
+
         </div>
 
-        {/* Copyright */}
-        <div style={{ borderTop: "1px solid rgba(255,255,255,.1)", padding: "18px 0", textAlign: "center" }}>
-          <p style={{ color: "rgba(255,255,255,.38)", fontSize: 13 }}>Copyright © 2026 New Green Agro Coal All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "32px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)" }}>© 2026 New Green Agro Coal. All rights reserved.</p>
+          <div style={{ display: "flex", gap: "24px" }}>
+            <a href="#" style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Terms</a>
+            <a href="#" style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Privacy</a>
+          </div>
         </div>
       </footer>
     </div>

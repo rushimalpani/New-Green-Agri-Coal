@@ -10,7 +10,7 @@ const Img = ({ src, alt, style, fallback }) => {
 
 export default function ManufacturingUnit() {
   return (
-    <section className="sec" style={{ background: "#fff", padding: "88px 60px" }}>
+    <section id="manufacturing" className="sec" style={{ background: "#fff", padding: "88px 60px" }}>
       <div style={{ maxWidth: 1220, margin: "0 auto" }}>
         <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 3, color: "#888", textTransform: "uppercase", marginBottom: 8 }}>LOCATION</p>
         <h2 className="sec-h2" style={{ fontSize: "clamp(26px,3.8vw,50px)", fontWeight: 700, color: "#111", marginBottom: 40, display: "flex", alignItems: "flex-end", flexWrap: "wrap" }}>Our Manufacturing Unit<Dot /></h2>
@@ -21,7 +21,7 @@ export default function ManufacturingUnit() {
             <div className="map-frame" style={{ height: 210, borderRadius: 10, overflow: "hidden", marginBottom: 24, background: "#607d8b" }}>
               <Img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80" alt="factory" style={{ width: "100%", height: "100%", objectFit: "cover" }} fallback="🏗️" />
             </div>
-            {[{ label: "First plant", rows: [["Area", "1,30,680 sq.ft"], ["Production", "30 tons/ day"], ["Number of machine", "2"]] }, { label: "Second plant", rows: [["Area", "65,340 sq ft"], ["Production", "20 tons / day"], ["Number of machine", "2"]] }].map(p => (
+            {[{ label: "First plant", rows: [["Address", "Nanded MIDC, Maharashtra"], ["Area", "1,30,680 sq.ft"], ["Production", "30 tons/ day"], ["Number of machine", "2"]] }, { label: "Second plant", rows: [["Address", "Golegaon, Maharashtra"], ["Area", "65,340 sq ft"], ["Production", "20 tons / day"], ["Number of machine", "2"]] }].map(p => (
               <div key={p.label} style={{ marginBottom: 20 }}>
                 <h4 style={{ fontSize: 15, fontWeight: 700, color: "#2e7d32", marginBottom: 9 }}>{p.label}</h4>
                 {p.rows.map(([k, v]) => <p key={k} style={{ fontSize: 14, color: "#444", marginBottom: 5 }}><strong>{k} :</strong> {v}</p>)}

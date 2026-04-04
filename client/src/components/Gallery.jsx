@@ -1,75 +1,115 @@
-import { useState } from "react";
+import aboutSprout from "../assets/WhatsApp Image 2026-04-01 at 22.22.48 (2).jpeg";
+import aboutFactory from "../assets/about_factory.png";
+import aboutField from "../assets/about_field.png";
+import aboutBriquettes from "../assets/WhatsApp Image 2026-04-01 at 22.22.45.jpeg";
 
-const Dot = () => <span style={{ display: "inline-block", width: 13, height: 13, background: "#2e7a14", marginLeft: 6, marginBottom: 4, verticalAlign: "bottom", flexShrink: 0 }} />;
+const Dot = () => <span style={{ display: "inline-block", width: 14, height: 14, background: "#2E7D32", marginLeft: 8, borderRadius: "1px" }} />;
 
-const Img = ({ src, alt, style, fallback }) => {
-  const [err, setErr] = useState(false);
-  return err ? <div style={{ ...style, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 52 }}>{fallback}</div>
-    : <img src={src} alt={alt} style={style} onError={() => setErr(true)} />;
-};
-
-const images = [
-  'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600',
-  'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600',
-  'https://images.unsplash.com/photo-1531476729961-4560a184f932?w=600',
-  'https://images.unsplash.com/photo-1518173946687-a4c8a9ba332f?w=600',
-  'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800',
-];
-
-const Gallery = () => {
+export default function Gallery() {
   return (
-    <section id="gallery" className="sec" style={{ background: "#fff", padding: "80px 60px", overflow: "hidden" }}>
-      <div style={{ maxWidth: 1220, margin: "0 auto" }}>
-        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 3, color: "#888", textTransform: "uppercase", marginBottom: 8 }}>GALLERY</p>
-        <h2 className="sec-h2" style={{ fontSize: "clamp(26px,3.8vw,50px)", fontWeight: 700, color: "#111", marginBottom: 40, display: "flex", alignItems: "flex-end", flexWrap: "wrap" }}>Our Production Hub<Dot /></h2>
+    <section id="gallery" style={{ background: "#ffffff", padding: "96px 0", overflow: "hidden" }}>
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 32px" }}>
+        
+        <p style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "0.1em", color: "#71717A", textTransform: "uppercase", marginBottom: "16px" }}>GALLERY</p>
+        <h2 style={{ fontSize: "56px", fontWeight: 800, color: "#111827", lineHeight: "1.1", marginBottom: "56px", display: "flex", alignItems: "baseline" }}>
+          Our Production Hub <Dot />
+        </h2>
 
-        {/* Top row: 3 images */}
-        <div className="gallery-grid" style={{ display: "grid", gridTemplateColumns: "1fr 2fr 1fr", gap: 14, marginBottom: 14 }}>
-          {[images[0], images[1], images[2]].map((src, i) => (
-            <div key={i} style={{ height: 180, borderRadius: 16, overflow: "hidden", position: "relative", cursor: "pointer", transition: "transform .3s,box-shadow .3s" }}
-              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 16px 36px rgba(0,0,0,.18)"; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}>
-              <Img src={src} alt="Gallery" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 1s" }} fallback="🖼️" />
-            </div>
-          ))}
-        </div>
+        {/* Asymmetrical Grid Layout */}
+        <div style={{ 
+          display: "grid", 
+          gridTemplateColumns: "repeat(4, 1fr)", 
+          gridAutoRows: "240px", 
+          gap: "24px",
+          gridAutoFlow: "dense"
+        }}>
+          
+          {/* Card 1: 100% Stats Card (Top Left) */}
+          <div style={{ 
+            gridColumn: "span 1", 
+            gridRow: "span 1", 
+            background: "#ECF3E9", 
+            borderRadius: "24px", 
+            padding: "32px", 
+            display: "flex", 
+            flexDirection: "column", 
+            justifyContent: "center",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.02)"
+          }}>
+            <div style={{ fontSize: "48px", fontWeight: 800, color: "#2E7D32", lineHeight: "1" }}>100%</div>
+            <p style={{ fontSize: "16px", color: "#4B5563", fontWeight: 600, marginTop: "12px", lineHeight: "1.4" }}>Pure &<br/>Organic Waste</p>
+          </div>
 
-        {/* Bottom row: 2 larger images + rating card */}
-        <div className="gallery-bottom" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 14 }}>
-          <div style={{ height: 340, borderRadius: 16, overflow: "hidden", position: "relative", cursor: "pointer", transition: "transform .3s,box-shadow .3s" }}
-            onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 16px 36px rgba(0,0,0,.18)"; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}>
-            <Img src={images[3]} alt="Factory overview" style={{ width: "100%", height: "100%", objectFit: "cover" }} fallback="🏭" />
+          {/* Card 2: Landscape Image (Top Middle-Right) */}
+          <div style={{ 
+            gridColumn: "span 2", 
+            gridRow: "span 1", 
+            borderRadius: "24px", 
+            overflow: "hidden",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.05)"
+          }}>
+            <img src={aboutFactory} alt="Factory" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           </div>
-          <div style={{ height: 340, borderRadius: 16, overflow: "hidden", position: "relative", cursor: "pointer", transition: "transform .3s,box-shadow .3s" }}
-            onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 16px 36px rgba(0,0,0,.18)"; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}>
-            <Img src={images[4]} alt="Green field" style={{ width: "100%", height: "100%", objectFit: "cover" }} fallback="🌿" />
+
+          {/* Card 3: Portrait Image (Middle Left) */}
+          <div style={{ 
+            gridColumn: "span 1", 
+            gridRow: "span 2", 
+            borderRadius: "24px", 
+            overflow: "hidden",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.05)"
+          }}>
+            <img src={aboutSprout} alt="Sprout" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           </div>
-          {/* Stack: two small images + rating card */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 14, height: 340 }}>
-            <div style={{ display: "flex", gap: 14, height: "40%" }}>
-              <div style={{ flex: 1, borderRadius: 16, overflow: "hidden" }}>
-                <Img src={images[0]} alt="Sprout" style={{ width: "100%", height: "100%", objectFit: "cover" }} fallback="🌱" />
-              </div>
-              <div style={{ flex: 1, borderRadius: 16, overflow: "hidden", background: "#0F2D4A" }}>
-                <Img src={images[1]} alt="Briquettes" style={{ width: "100%", height: "100%", objectFit: "contain" }} fallback="🪵" />
-              </div>
-            </div>
-            <div style={{ flex: 1, borderRadius: 16, background: "#f2f2f2", padding: "20px 22px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <p style={{ fontSize: 14, fontWeight: 600, color: "#111", marginBottom: 8 }}>Excellent Customer Rating</p>
-              <div style={{ display: "flex", gap: 3, marginBottom: 10 }}>
+
+          {/* Card 4: Horizontal Image (Bottom Left center) */}
+          <div style={{ 
+            gridColumn: "span 2", 
+            gridRow: "span 1", 
+            borderRadius: "24px", 
+            overflow: "hidden",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.05)"
+          }}>
+            <img src={aboutField} alt="Eco Field" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          </div>
+
+          {/* Card 5: Square Image */}
+          <div style={{ 
+            gridColumn: "span 1", 
+            gridRow: "span 1", 
+            borderRadius: "24px", 
+            overflow: "hidden",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.05)"
+          }}>
+            <img src={aboutBriquettes} alt="Briquettes" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          </div>
+
+          {/* Card 6: Customer Rating Box (Bottom Right) */}
+          <div style={{ 
+            gridColumn: "span 1", 
+            gridRow: "span 1", 
+            background: "#1E3922", 
+            borderRadius: "24px", 
+            padding: "32px", 
+            display: "flex", 
+            flexDirection: "column", 
+            justifyContent: "space-between",
+            color: "#ffffff",
+            boxShadow: "0 15px 35px rgba(30, 57, 34, 0.2)"
+          }}>
+            <div>
+              <div style={{ display: "flex", gap: "4px", marginBottom: "8px" }}>
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} style={{ color: "#F5B82E", fontSize: 18 }}>★</span>
+                  <span key={i} style={{ color: "#FBBF24", fontSize: "16px" }}>★</span>
                 ))}
               </div>
-              <div style={{ fontSize: 42, fontWeight: 300, color: "#5BA829", lineHeight: 1 }}>4.8</div>
+              <p style={{ fontSize: "14px", fontWeight: 500, color: "rgba(255,255,255,0.8)" }}>Customer Rating</p>
             </div>
+            <div style={{ fontSize: "40px", fontWeight: 800 }}>4.8</div>
           </div>
+
         </div>
       </div>
     </section>
   );
-};
-
-export default Gallery;
+}

@@ -1,6 +1,6 @@
 export default function WhyBetter() {
   return (
-    <section className="banner-sec" style={{ position: "relative", padding: "80px 60px", minHeight: 340, display: "flex", alignItems: "center", overflow: "hidden" }}>
+    <section id="why-better" className="banner-sec" style={{ position: "relative", padding: "80px 60px", minHeight: 340, display: "flex", alignItems: "center", overflow: "hidden" }}>
       {/* Real green hills photo */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1920&q=85" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />

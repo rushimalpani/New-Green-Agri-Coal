@@ -13,7 +13,7 @@ export default function Testimonials() {
   const [tIdx, setTIdx] = useState(0);
 
   return (
-    <section style={{ position: "relative", padding: "80px 60px 72px", background: "#060f05", overflow: "hidden" }}>
+    <section id="testimonials" style={{ position: "relative", padding: "80px 60px 72px", background: "#060f05", overflow: "hidden" }}>
       {/* Leaf texture BG image */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1600&q=70" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: .18 }} />
