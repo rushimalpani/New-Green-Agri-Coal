@@ -33,7 +33,7 @@ const DesktopLink = ({ href, children, isScrolled }) => {
 export default function Navbar() {
   const [isScrolled,  setIsScrolled]  = useState(false);
   const [menuOpen,    setMenuOpen]    = useState(false);
-  const [isMobile,    setIsMobile]    = useState(window.innerWidth <= 768);
+  const [isMobile,    setIsMobile]    = useState(window.innerWidth <= 1024);
 
   /* scroll */
   useEffect(() => {
@@ -45,10 +45,11 @@ export default function Navbar() {
   /* resize */
   useEffect(() => {
     const onResize = () => {
-      const mobile = window.innerWidth <= 768;
+      const mobile = window.innerWidth <= 1024;
       setIsMobile(mobile);
       if (!mobile) setMenuOpen(false);
     };
+    onResize();
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);

@@ -10,10 +10,14 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  width: 100%;
   background: #fff;
   color: #1a1a1a;
-  -webkit-text-size-adjust: 100%; /* prevent font scaling on iOS rotation */
+  -webkit-text-size-adjust: 100%;
 }
+#root { overflow-x: hidden; width: 100%; position: relative; }
+section { overflow-x: hidden; width: 100%; }
+
 a { text-decoration: none; color: inherit; }
 button, input, textarea, select { font-family: 'Inter', sans-serif; }
 input, textarea, select {
@@ -143,6 +147,8 @@ img { display: block; max-width: 100%; height: auto; }
 .banner-h2   { font-size: clamp(22px,4.2vw,54px); }
 .banner-p    { font-size: clamp(14px,1.5vw,17px); }
 .why-h2      { font-size: clamp(24px,4vw,54px); }
+.sec-h2::after { display: none !important; }
+
 
 /* ─────────────────────────────────────────
    ABOUT US
@@ -210,6 +216,22 @@ img { display: block; max-width: 100%; height: auto; }
    COLLAGE (AboutUs)
 ───────────────────────────────────────── */
 .collage { position: relative; }
+
+/* ── Grid Scaling (Desktop/Tablet) ── */
+@media (min-width: 1025px) {
+  .desktop-nav { display: flex !important; }
+  .ham         { display: none !important; }
+
+  .stats-bar { flex-direction: row !important; min-height: 120px !important; }
+  .stat-item { border-top: none !important; border-left: 1px solid rgba(255,255,255,.2) !important; padding: 0 40px !important; }
+  .stat-item:first-child { border-left: none !important; }
+  
+  .spec-grid { grid-template-columns: 1fr 1.2fr 1fr !important; }
+  .gallery-grid-main { grid-template-columns: repeat(4, 1fr) !important; }
+  .adv-grid { grid-template-columns: repeat(6, 1fr) !important; }
+  .ins-grid { grid-template-columns: 1fr 1fr !important; }
+  .footer-grid { grid-template-columns: 1.2fr 1fr 1.2fr !important; }
+}
 
 /* ═══════════════════════════════════════════
    RESPONSIVE BREAKPOINTS

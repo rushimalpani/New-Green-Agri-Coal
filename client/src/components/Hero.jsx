@@ -63,9 +63,9 @@ export default function Hero() {
             style={{
               fontSize: "clamp(24px, 4vw, 32px)",
               fontWeight: 900,
-              float: "left",
-              marginRight: "5px",
-              lineHeight: "1",
+              display: "inline-block",
+              verticalAlign: "baseline",
+              marginRight: "4px",
               color: "#FFFFFF",
             }}
           >
