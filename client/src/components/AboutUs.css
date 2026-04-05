@@ -227,3 +227,26 @@
   .section-para { font-size: 14px; }
   .sub-body { font-size: 14px; }
 }
+
+/* ── Very small phones (≤ 380px) ── */
+@media(max-width:380px) {
+  .about-section { padding: 32px 12px 40px; }
+  .collage-container { height: 480px; }
+  .p-tl { width: 172px; height: 172px; top: 16px; left: 6px; }
+  .p-tr { top: 92px; left: 182px; width: 162px; height: 104px; }
+  .p-bl { top: 270px; left: 6px; width: 136px; height: 112px; }
+  .p-br { top: 276px; left: 146px; width: 118px; height: 100px; }
+  .frame-tl { width: 122px; height: 118px; }
+  .frame-tr { top: 80px; left: 294px; width: 40px; height: 40px; }
+  .frame-bl-br { top: 330px; left: 143px; width: 40px; height: 42px; }
+  .sq-sage { top: 14px; left: 216px; width: 30px; height: 42px; }
+  .sq-green-lg { top: 248px; left: 172px; width: 18px; height: 20px; }
+  .sq-green-sm { display: none; }
+  .sq-gray { top: 276px; left: 270px; width: 34px; height: 34px; }
+  .dot-grid-bg { display: none; }
+  .section-title { font-size: 26px; }
+  .section-para { font-size: 13px; line-height: 1.75; }
+  .sub-head { font-size: 16px; }
+  .sub-body { font-size: 13px; }
+}
+

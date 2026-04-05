@@ -1,16 +1,46 @@
-# React + Vite
+# New Green Agro - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the React-based frontend for the New Green Agro application. It is built using [Vite](https://vitejs.dev/) for a lightning-fast development experience and leverages [Tailwind CSS v4](https://tailwindcss.com/) for modern, responsive styling.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Component-Driven Architecture**: Modular components for Hero, About Us, Gallery, etc.
+- **Modern UI/UX**: Clean design with focus on sustainability and eco-friendliness.
+- **Fully Responsive**: Optimized for every device.
+- **Client-Side Routing**: Handled by [React Router Dom](https://reactrouter.com/).
+- **Dynamic Icons**: Powered by Lucide React and React Icons.
 
-## React Compiler
+## 🛠️ Technology Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 19
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS v4
+- **State Management**: React Hooks (useState, useEffect)
+- **Icons**: Lucide React, React Icons
 
-## Expanding the ESLint configuration
+## ⚙️ Development Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Run Development Server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for Production**:
+   ```bash
+   npm run build
+   ```
+
+## 📂 Directory Structure
+
+- `src/components/`: Reusable UI modules.
+- `src/pages/`: Page-level components.
+- `src/assets/`: Images and global styles.
+
+## 📄 License
+
+This frontend is part of the New Green Agro project, licensed under the ISC License.
