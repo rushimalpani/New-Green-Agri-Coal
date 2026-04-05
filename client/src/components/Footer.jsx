@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logoIcon from "../assets/logo_main.png";
+import logoIcon from "../assets/WhatsApp Image 2026-03-10 at 4.43.35 PM 1.png";
 
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
@@ -38,10 +38,10 @@ const Footer = () => {
           {/* Column 1: Brand & Links */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "32px" }}>
-              <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+              <div style={{ width: "160px", height: "auto", borderRadius: "8px", background: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", padding: "10px" }}>
                 <img src={logoIcon} alt="Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
               </div>
-              <div style={{ fontWeight: 800, fontSize: "18px", lineHeight: "1.1" }}>
+              <div style={{ display: "none" }}>
                 New Green<br/><span style={{ color: "#86EFAC" }}>Agro Coal</span>
               </div>
             </div>

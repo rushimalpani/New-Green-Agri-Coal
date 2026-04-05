@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
-import logoIcon from "../assets/logo_main.png";
+import logoIcon from "../assets/WhatsApp Image 2026-03-10 at 4.43.35 PM 1.png";
 
 const NavLink = ({ href, children, hasDropdown, isScrolled }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -62,13 +62,13 @@ export default function Navbar() {
             src={logoIcon} 
             alt="Logo" 
             style={{ 
-              width: "48px", 
-              height: "48px", 
+              width: "160px", 
+              height: "auto", 
               objectFit: "contain",
               borderRadius: "4px"
             }} 
           />
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "none" }}>
             <span style={{ fontWeight: 700, fontSize: "17px", color: "#9DC940", lineHeight: "1.1", letterSpacing: "0.2px" }}>New Green</span>
             <span style={{ fontWeight: 700, fontSize: "17px", color: "#9DC940", lineHeight: "1.1", letterSpacing: "0.2px" }}>Agro Coal</span>
           </div>
