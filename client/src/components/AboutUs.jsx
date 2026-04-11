@@ -74,9 +74,9 @@ export default function AboutUs() {
           <div className="wrap-margin">
             <h3 className="sub-head">Our Vision</h3>
             <p className="sub-body">
-              To become a leading provider of sustainable biomass fuel
-              solutions by promoting renewable energy and reducing
-              dependence on fossil fuels.
+              To become a leading provider of sustainable biomass
+              briquettes and fuel solutions by promoting renewable energy
+              and reducing dependence on fossil fuels.
             </p>
           </div>
 

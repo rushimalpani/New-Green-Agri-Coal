@@ -24,6 +24,11 @@ export const ImageAutoSlider = () => {
   // Duplicate images for seamless loop
   const duplicatedImages = [...images, ...images];
 
+  // Fixed pixel sizes for each breakpoint — enforced uniformly
+  const CARD_SIZE_MOBILE = 200;   // px — phones
+  const CARD_SIZE_TABLET = 260;   // px — tablets
+  const CARD_SIZE_DESKTOP = 320;  // px — desktop
+
   return (
     <>
       <style>{`
@@ -36,11 +41,29 @@ export const ImageAutoSlider = () => {
           }
         }
 
-        .infinite-scroll {
-          animation: scroll-right 30s linear infinite;
+        .slider-outer {
+          width: 100%;
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #1E3922;
+          border-radius: 24px;
+          padding: 48px 0;
+        }
+
+        .slider-track-wrapper {
+          position: relative;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 16px 0;
         }
 
         .scroll-container {
+          width: 100%;
           mask: linear-gradient(
             90deg,
             transparent 0%,
@@ -57,31 +80,73 @@ export const ImageAutoSlider = () => {
           );
         }
 
-        .image-item {
+        .infinite-scroll {
+          display: flex;
+          gap: 24px;
+          width: max-content;
+          animation: scroll-right 30s linear infinite;
+        }
+
+        .slider-card {
+          flex-shrink: 0;
+          width: ${CARD_SIZE_MOBILE}px;
+          height: ${CARD_SIZE_MOBILE}px;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
           transition: transform 0.3s ease, filter 0.3s ease;
         }
 
-        .image-item:hover {
+        .slider-card:hover {
           transform: scale(1.05);
           filter: brightness(1.1);
         }
+
+        .slider-card img {
+          width: ${CARD_SIZE_MOBILE}px !important;
+          height: ${CARD_SIZE_MOBILE}px !important;
+          max-width: none !important;
+          object-fit: cover !important;
+          display: block !important;
+        }
+
+        @media (min-width: 481px) and (max-width: 1024px) {
+          .slider-card {
+            width: ${CARD_SIZE_TABLET}px;
+            height: ${CARD_SIZE_TABLET}px;
+          }
+          .slider-card img {
+            width: ${CARD_SIZE_TABLET}px !important;
+            height: ${CARD_SIZE_TABLET}px !important;
+          }
+        }
+
+        @media (min-width: 1025px) {
+          .slider-card {
+            width: ${CARD_SIZE_DESKTOP}px;
+            height: ${CARD_SIZE_DESKTOP}px;
+          }
+          .slider-card img {
+            width: ${CARD_SIZE_DESKTOP}px !important;
+            height: ${CARD_SIZE_DESKTOP}px !important;
+          }
+        }
       `}</style>
       
-      <div className="w-full relative overflow-hidden flex items-center justify-center" style={{ background: "#1E3922", borderRadius: "24px", padding: "48px 0" }}>
+      <div className="slider-outer">
         {/* Scrolling images container */}
-        <div className="relative w-full flex items-center justify-center py-4">
-          <div className="scroll-container w-full">
-            <div className="infinite-scroll flex gap-6 w-max">
+        <div className="slider-track-wrapper">
+          <div className="scroll-container">
+            <div className="infinite-scroll">
               {duplicatedImages.map((image, index) => (
-                <div
-                  key={index}
-                  className="image-item flex-shrink-0 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-xl overflow-hidden shadow-2xl"
-                >
+                <div key={index} className="slider-card">
                   <img
                     src={image}
                     alt={`Gallery image ${(index % images.length) + 1}`}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
+                    loading={index < images.length ? 'eager' : 'lazy'}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
                   />
                 </div>
               ))}
