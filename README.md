@@ -1,28 +1,34 @@
 # New Green Agro - Sustainable Energy Solutions
 
-![New Green Agro Logo](client/public/logo.png) <!-- Note: Assuming logo path based on common patterns, will verify if needed -->
+![New Green Agro Logo](client/public/logo.png)
 
-New Green Agro is a modern, high-performance web application dedicated to promoting sustainable energy solutions, specifically focusing on eco-friendly fuel alternatives like agri-coal, pellets, and briquettes. The platform provides a comprehensive overview of the company's mission, products, manufacturing process, and industry insights.
+New Green Agro is a modern, high-performance web application dedicated to promoting sustainable energy solutions. We focus on eco-friendly fuel alternatives like **biomass briquettes**, agri-coal, and pellets. The platform provides a comprehensive overview of the company's mission, products, manufacturing process, and industry insights.
+
+## ✨ Recent Updates
+
+- **Visionary Growth**: Updated our mission and vision to explicitly include **biomass briquettes**, reflecting our expanding product line.
+- **Enhanced Mobile UI**: Redesigned the "About Us" collage for mobile devices. It now uses a sleek 2x2 grid layout that ensures a perfect fit on any screen size.
+- **Precision Image Slider**: Implemented a pixel-perfect, infinite auto-scrolling slider for our operations gallery. Enforced uniform dimensions (200px to 320px) across all viewports to prevent layout shifts.
+- **Build Optimization**: Resolved PostCSS import ordering issues to ensure lightning-fast production builds with Tailwind CSS v4.
 
 ## 🚀 Features
 
 - **Dynamic Hero Section**: Engaging introduction to green energy solutions.
-- **Detailed About Us**: Insights into the company's vision and values.
-- **Product Specifications**: Technical details of eco-friendly fuel products.
-- **Interactive Gallery**: Showcase of the manufacturing unit and workspace.
-- **Testimonials**: Real feedback from satisfied clients.
-- **Insights & Blogs**: Educational content on sustainable energy.
-- **Contact Integration**: Fully functional contact form with automated email notifications.
-- **Fully Responsive**: Optimized for seamless experience across mobile, tablet, and desktop.
+- **Detailed About Us**: Insights into the company's vision, mission, and core values.
+- **Product Specifications**: Technical details (calorific value, ash content, size) of eco-friendly fuel products.
+- **Infinite Operations Gallery**: A smooth, auto-scrolling showcase of our manufacturing unit.
+- **Interactive Workspace**: Asymmetric grid layout for a modern, industrial feel.
+- **Fully Responsive**: Pixel-perfect design optimized for mobile, tablet, and desktop.
+- **Contact Integration**: Fully functional contact form with automated email notifications via high-reliability SMTP.
 
 ## 🛠️ Tech Stack
 
 ### Frontend
 - **Framework**: [React 19](https://react.dev/)
 - **Build Tool**: [Vite](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) + Custom Vanilla CSS for specialized layouts
 - **Icons**: [Lucide React](https://lucide.dev/), [React Icons](https://react-icons.github.io/react-icons/)
-- **Routing**: [React Router Dom](https://reactrouter.com/)
+- **Routing**: [React Router Dom v7](https://reactrouter.com/)
 
 ### Backend
 - **Runtime**: [Node.js](https://nodejs.org/)
@@ -36,9 +42,9 @@ New Green Agro is a modern, high-performance web application dedicated to promot
 NewGreenAgro/
 ├── client/                # React frontend application
 │   ├── src/
-│   │   ├── components/    # Reusable UI components
-│   │   ├── pages/         # Main page layouts
-│   │   └── assets/        # Styles and images
+│   │   ├── components/    # Reusable UI components & Sections
+│   │   ├── pages/         # Page-level components
+│   │   └── assets/        # Styles, fonts, and images
 │   └── package.json
 ├── server/                # Node.js backend API
 │   ├── routes/            # API route definitions
