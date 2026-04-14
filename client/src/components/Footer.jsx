@@ -112,7 +112,7 @@ export default function Footer() {
                   ["Products",       "#products"],
                   ["Insights",       "#insights"],
                   ["About Us",       "#about"],
-                  ["Contact Us",     "#footer"],
+                  ["Contact Us",     "#contact-form"],
                   ["Privacy Policy", "#"],
                 ].map(([label, href]) => (
                   <a
@@ -183,6 +183,7 @@ export default function Footer() {
 
             {/* Column 3: Contact Form */}
             <div
+              id="contact-form"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 borderRadius: "20px",

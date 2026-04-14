@@ -125,7 +125,7 @@ export default function Navbar() {
               </DesktopLink>
             ))}
             <a
-              href="#footer"
+              href="#contact-form"
               style={{
                 background: "#2E7D32",
                 color: "#FFFFFF",
@@ -215,7 +215,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#footer"
+            href="#contact-form"
             onClick={closeMenu}
             style={{
               display: "block",
