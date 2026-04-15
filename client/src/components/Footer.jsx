@@ -109,10 +109,10 @@ export default function Footer() {
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
                 {[
-                  ["Products",       "#products"],
-                  ["Insights",       "#insights"],
-                  ["About Us",       "#about"],
-                  ["Contact Us",     "#contact-form"],
+                  ["Products",       "/#products"],
+                  ["Insights",       "/#insights"],
+                  ["About Us",       "/#about"],
+                  ["Contact Us",     "/#contact-form"],
                   ["Privacy Policy", "#"],
                 ].map(([label, href]) => (
                   <a

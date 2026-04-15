@@ -201,7 +201,7 @@ img { display: block; max-width: 100%; height: auto; }
 /* ─────────────────────────────────────────
    INSIGHTS
 ───────────────────────────────────────── */
-.ins-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.ins-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
 .ins-card { height: 400px; }
 
 /* ─────────────────────────────────────────
@@ -229,7 +229,7 @@ img { display: block; max-width: 100%; height: auto; }
   .spec-grid { grid-template-columns: 1fr 1.2fr 1fr !important; }
   .gallery-grid-main { grid-template-columns: repeat(4, 1fr) !important; }
   .adv-grid { grid-template-columns: repeat(6, 1fr) !important; }
-  .ins-grid { grid-template-columns: 1fr 1fr !important; }
+  .ins-grid { grid-template-columns: repeat(3, 1fr) !important; }
   .footer-grid { grid-template-columns: 1.2fr 1fr 1.2fr !important; }
 }
 
@@ -345,7 +345,7 @@ img { display: block; max-width: 100%; height: auto; }
   .adv-grid    { grid-template-columns: repeat(3,1fr) !important; }
   .footer-grid { grid-template-columns: 1.2fr 1fr 1.1fr !important; }
   .footer-mid  { grid-column: auto !important; }
-  .ins-grid    { gap: 16px !important; }
+  .ins-grid    { grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; }
   .ins-card    { height: 320px !important; }
   .mfg-grid    { gap: 32px !important; }
 }

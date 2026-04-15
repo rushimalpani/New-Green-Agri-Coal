@@ -62,7 +62,7 @@ export default function WhyBetter() {
           producing lower emissions and less ash during combustion.
         </p>
         <a
-          href="#specifications"
+          href="/#specifications"
           style={{
             display: "inline-flex",
             alignItems: "center",

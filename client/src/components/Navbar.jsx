@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import logoIcon from "../assets/WhatsApp Image 2026-03-10 at 4.43.35 PM 1.png";
 
 const NAV_LINKS = [
-  { label: "Products",   href: "#products"  },
-  { label: "Insights",   href: "#insights"  },
-  { label: "About Us",   href: "#about"     },
-  { label: "Gallery",    href: "#gallery"   },
+  { label: "Products",   href: "/#products"  },
+  { label: "Insights",   href: "/#insights"  },
+  { label: "About Us",   href: "/#about"     },
+  { label: "Gallery",    href: "/#gallery"   },
 ];
 
 /* DesktopLink — purely inline‑styled, no class dependency */
@@ -99,7 +99,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <a
-          href="#home"
+          href="/#home"
           aria-label="New Green Agro Coal – Home"
           style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}
         >
@@ -125,7 +125,7 @@ export default function Navbar() {
               </DesktopLink>
             ))}
             <a
-              href="#contact-form"
+              href="/#contact-form"
               style={{
                 background: "#2E7D32",
                 color: "#FFFFFF",
@@ -215,7 +215,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#contact-form"
+            href="/#contact-form"
             onClick={closeMenu}
             style={{
               display: "block",

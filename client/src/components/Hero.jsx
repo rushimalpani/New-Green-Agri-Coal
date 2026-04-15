@@ -81,7 +81,7 @@ export default function Hero() {
           style={{ marginTop: "clamp(28px, 4vw, 44px)" }}
         >
           <a
-            href="#contact-form"
+            href="/#contact-form"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -118,7 +118,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="#contact-form"
+            href="/#contact-form"
             style={{
               display: "inline-flex",
               alignItems: "center",
