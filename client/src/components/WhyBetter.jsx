@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function WhyBetter() {
   return (
     <section
@@ -61,8 +63,8 @@ export default function WhyBetter() {
           Biomass briquettes offer a cleaner and more sustainable alternative to traditional coal,
           producing lower emissions and less ash during combustion.
         </p>
-        <a
-          href="/#specifications"
+        <Link
+          to="/use-case/bio-coal-vs-traditional-coal"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -78,8 +80,8 @@ export default function WhyBetter() {
           onMouseEnter={e => { e.currentTarget.style.borderColor = "#4caf50"; e.currentTarget.style.color = "#8bc34a"; }}
           onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,.4)"; e.currentTarget.style.color = "rgba(255,255,255,.88)"; }}
         >
-          Read case study
-        </a>
+          Read More
+        </Link>
       </div>
     </section>
   );
