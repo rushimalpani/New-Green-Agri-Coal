@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import AboutUs from '../components/AboutUs';
@@ -5,6 +7,7 @@ import Specifications from '../components/Specifications';
 import WhyBetter from '../components/WhyBetter';
 import WhyChoose from '../components/WhyChoose';
 import Advantages from '../components/Advantages';
+import CustomersSection from '../components/CustomersSection';
 import Testimonials from '../components/Testimonials';
 import Gallery from '../components/Gallery';
 import WorkspaceGallery from '../components/WorkspaceGallery';
@@ -13,6 +16,20 @@ import Insights from '../components/Insights';
 import Footer from '../components/Footer';
 
 const Home = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [hash]);
+
   return (
     <>
       <Navbar />
@@ -22,6 +39,7 @@ const Home = () => {
       <WhyBetter />
       <WhyChoose />
       <Advantages />
+      <CustomersSection />
       <Testimonials />
       <Gallery />
       <WorkspaceGallery />

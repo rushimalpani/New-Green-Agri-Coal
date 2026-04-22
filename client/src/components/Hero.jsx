@@ -57,15 +57,17 @@ export default function Hero() {
             maxWidth: "600px",
             marginTop: "clamp(20px, 3vw, 32px)",
             position: "relative",
+            lineHeight: "1.7",
           }}
         >
           <span
             style={{
-              fontSize: "clamp(24px, 4vw, 32px)",
+              fontSize: "clamp(34px, 5vw, 44px)",
               fontWeight: 900,
-              display: "inline-block",
-              verticalAlign: "baseline",
-              marginRight: "4px",
+              float: "left",
+              lineHeight: "0.8",
+              marginRight: "6px",
+              marginTop: "4px",
               color: "#FFFFFF",
             }}
           >

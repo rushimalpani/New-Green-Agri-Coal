@@ -9,7 +9,7 @@ export default function UseCaseDetail() {
   const useCase = useCases.find((uc) => uc.slug === slug);
 
   useEffect(() => {
-    // Analytics or meta tag updates could go here
+    window.scrollTo(0, 0);
   }, [useCase]);
 
   if (!useCase) {
@@ -93,7 +93,8 @@ export default function UseCaseDetail() {
               fontSize: "14px", 
               fontWeight: 600,
               marginBottom: "40px",
-              transition: "color 0.2s ease"
+              transition: "color 0.2s ease",
+              textDecoration: "none"
             }}
             onMouseEnter={(e) => e.currentTarget.style.color = "#2E7D32"}
             onMouseLeave={(e) => e.currentTarget.style.color = "#71717A"}
@@ -155,8 +156,7 @@ export default function UseCaseDetail() {
               Join the growing number of industries optimizing their energy consumption with our premium bio-coal briquettes.
             </p>
             <a 
-              href="#contact" 
-              onClick={() => window.location.href = "/#contact"}
+              href="/#contact-form" 
               style={{ 
                 display: "inline-block",
                 background: "#2E7D32", 
@@ -164,7 +164,8 @@ export default function UseCaseDetail() {
                 padding: "16px 32px", 
                 borderRadius: "12px", 
                 fontWeight: 700,
-                transition: "transform 0.2s ease, background 0.2s ease"
+                transition: "transform 0.2s ease, background 0.2s ease",
+                textDecoration: "none"
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "scale(1.02)";
