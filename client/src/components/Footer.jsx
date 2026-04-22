@@ -30,20 +30,34 @@ const SocialIcon = ({ name, url, children }) => (
 
 export default function Footer() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
-  const [status, setStatus]     = useState("");
+  const [status, setStatus] = useState("");
 
   const handleChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const [botField, setBotField] = useState("");
+
   const handleSubmit = async e => {
     e.preventDefault();
+    // Honeypot spam check — bots fill hidden fields, real users don't
+    if (botField) return;
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: "c09f6e53-0260-4af9-a1c7-66dd11a4ebb9",
+          subject: `🌱 New Inquiry from ${formData.name} — New Green Agro Coal`,
+          from_name: "New Green Agro Coal Website",
+          replyto: formData.email,
+          "Customer Name": formData.name,
+          "Email Address": formData.email,
+          "Phone Number": formData.phone || "Not provided",
+          "Message": formData.message,
+        }),
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
         setStatus("success");
         setFormData({ name: "", email: "", phone: "", message: "" });
         setTimeout(() => setStatus(""), 4000);
@@ -199,6 +213,16 @@ export default function Footer() {
                 style={{ display: "flex", flexDirection: "column", gap: "12px" }}
                 noValidate
               >
+                {/* Honeypot field — hidden from users, catches spam bots */}
+                <input
+                  type="text"
+                  name="botcheck"
+                  value={botField}
+                  onChange={e => setBotField(e.target.value)}
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
                 <input
                   type="text"
                   name="name"

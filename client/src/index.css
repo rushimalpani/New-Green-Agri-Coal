@@ -220,6 +220,80 @@ img { display: block; max-width: 100%; height: auto; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
 
 /* ─────────────────────────────────────────
+   WHATSAPP FAB
+───────────────────────────────────────── */
+.whatsapp-fab {
+  position: fixed;
+  right: clamp(16px, 2.5vw, 28px);
+  bottom: clamp(16px, 2.5vw, 28px);
+  z-index: 999;
+  width: clamp(56px, 6vw, 64px);
+  height: clamp(56px, 6vw, 64px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #fff;
+  box-shadow: 0 16px 32px rgba(18, 140, 126, 0.28);
+  transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+}
+
+.whatsapp-fab:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 20px 38px rgba(18, 140, 126, 0.34);
+  filter: saturate(1.05);
+}
+
+.whatsapp-fab:hover .whatsapp-fab__tooltip,
+.whatsapp-fab:focus-visible .whatsapp-fab__tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.whatsapp-fab:focus-visible {
+  outline: 3px solid rgba(37, 211, 102, 0.28);
+  outline-offset: 4px;
+}
+
+.whatsapp-fab__tooltip {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 14px);
+  transform: translateY(-50%) translateX(8px);
+  min-width: max-content;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(12, 20, 18, 0.92);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease, transform .22s ease;
+}
+
+.whatsapp-fab__tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  background: rgba(12, 20, 18, 0.92);
+  transform: translateY(-50%) rotate(45deg);
+  border-radius: 2px;
+}
+
+.whatsapp-fab__icon {
+  font-size: clamp(28px, 3vw, 34px);
+}
+
+/* ─────────────────────────────────────────
    COLLAGE (AboutUs)
 ───────────────────────────────────────── */
 .collage { position: relative; }
@@ -320,6 +394,14 @@ img { display: block; max-width: 100%; height: auto; }
   .ins-card  { height: 240px !important; }
   .footer-card { padding: 32px 20px 24px !important; border-radius: 20px !important; }
   .footer-outer { padding: 16px !important; }
+  .whatsapp-fab {
+    right: 14px;
+    bottom: 14px;
+    width: 54px;
+    height: 54px;
+  }
+  .whatsapp-fab__tooltip { display: none; }
+  .whatsapp-fab__icon { font-size: 28px; }
   /* Stats bar — extra compact */
   .stat-item { padding: 14px 20px !important; }
   .stat-num  { font-size: 34px !important; }

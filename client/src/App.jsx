@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import UseCaseDetail from './pages/UseCaseDetail';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 import { NotFound } from './components/ui/not-found-2';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         {/* Catch-all route for 404 - Not Found */}
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <WhatsAppFloatingButton />
     </Router>
   );
 }
