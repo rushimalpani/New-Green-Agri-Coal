@@ -1,19 +1,20 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logoIcon from "../assets/WhatsApp Image 2026-03-10 at 4.43.35 PM 1.png";
 
 const NAV_LINKS = [
-  { label: "Products",   href: "/#products"  },
-  { label: "Insights",   href: "/#insights"  },
-  { label: "About Us",   href: "/#about"     },
-  { label: "Gallery",    href: "/#gallery"   },
+  { label: "Products",   href: "/products"  },
+  { label: "Insights",   href: "/insights"  },
+  { label: "About Us",   href: "/about"     },
+  { label: "Gallery",    href: "/gallery"   },
 ];
 
 /* DesktopLink — purely inline‑styled, no class dependency */
 const DesktopLink = ({ href, children, isScrolled }) => {
   const [hovered, setHovered] = useState(false);
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       style={{
         color: hovered ? "#9DC940" : isScrolled ? "#1a1a1a" : "rgba(255,255,255,0.9)",
         fontSize: "15px",
@@ -26,7 +27,7 @@ const DesktopLink = ({ href, children, isScrolled }) => {
       onMouseLeave={() => setHovered(false)}
     >
       {children}
-    </a>
+    </Link>
   );
 };
 
@@ -98,8 +99,8 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <a
-          href="/#home"
+        <Link
+          to="/"
           aria-label="New Green Agro Coal – Home"
           style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}
         >
@@ -114,7 +115,7 @@ export default function Navbar() {
               display: "block",
             }}
           />
-        </a>
+        </Link>
 
         {/* ── Desktop links (hidden on mobile) ── */}
         {!isMobile && (
@@ -124,8 +125,8 @@ export default function Navbar() {
                 {l.label}
               </DesktopLink>
             ))}
-            <a
-              href="/#contact-form"
+            <Link
+              to="/contact"
               style={{
                 background: "#2E7D32",
                 color: "#FFFFFF",
@@ -142,7 +143,7 @@ export default function Navbar() {
               onMouseLeave={e => { e.currentTarget.style.backgroundColor = "#2E7D32"; e.currentTarget.style.transform = "none"; }}
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         )}
 
@@ -194,9 +195,9 @@ export default function Navbar() {
           }}
         >
           {NAV_LINKS.map(l => (
-            <a
+            <Link
               key={l.label}
-              href={l.href}
+              to={l.href}
               onClick={closeMenu}
               style={{
                 display: "block",
@@ -212,10 +213,10 @@ export default function Navbar() {
               onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.85)"; e.currentTarget.style.background = "transparent"; }}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="/#contact-form"
+          <Link
+            to="/contact"
             onClick={closeMenu}
             style={{
               display: "block",
@@ -234,7 +235,7 @@ export default function Navbar() {
             onMouseLeave={e => { e.currentTarget.style.background = "#2E7D32"; }}
           >
             Contact Us
-          </a>
+          </Link>
         </nav>
       )}
 

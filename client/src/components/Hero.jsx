@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBg from "../assets/hero_bg_v2.png";
 
 export default function Hero() {
@@ -82,8 +83,8 @@ export default function Hero() {
           className="hero-btns"
           style={{ marginTop: "clamp(28px, 4vw, 44px)" }}
         >
-          <a
-            href="/#contact-form"
+          <Link
+            to="/contact"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -117,10 +118,10 @@ export default function Hero() {
               <ArrowUpRight size={22} />
             </div>
             Contact Us
-          </a>
+          </Link>
 
-          <a
-            href="/#contact-form"
+          <Link
+            to="/contact"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -137,7 +138,7 @@ export default function Hero() {
             onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)"; }}
           >
             Get Quote
-          </a>
+          </Link>
         </div>
       </div>
 

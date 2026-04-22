@@ -16,19 +16,31 @@ import Insights from '../components/Insights';
 import Footer from '../components/Footer';
 
 const Home = () => {
-  const { hash } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      const id = hash.replace('#', '');
-      const element = document.getElementById(id);
+    // Map pathnames to section IDs
+    const pathToId = {
+      '/products': 'products',
+      '/insights': 'insights',
+      '/about':    'about',
+      '/gallery':  'gallery',
+      '/contact':  'contact-form',
+    };
+
+    const targetId = hash ? hash.replace('#', '') : pathToId[pathname];
+
+    if (targetId) {
+      const element = document.getElementById(targetId);
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
+    } else if (pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  }, [hash]);
+  }, [pathname, hash]);
 
   return (
     <>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logoIcon from "../assets/WhatsApp Image 2026-03-10 at 4.43.35 PM 1.png";
 
 const SocialIcon = ({ name, url, children }) => (
@@ -109,21 +110,21 @@ export default function Footer() {
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
                 {[
-                  ["Products",       "/#products"],
-                  ["Insights",       "/#insights"],
-                  ["About Us",       "/#about"],
-                  ["Contact Us",     "/#contact-form"],
+                  ["Products",       "/products"],
+                  ["Insights",       "/insights"],
+                  ["About Us",       "/about"],
+                  ["Contact Us",     "/contact"],
                   ["Privacy Policy", "#"],
                 ].map(([label, href]) => (
-                  <a
+                  <Link
                     key={label}
-                    href={href}
+                    to={href}
                     style={{ color: "rgba(255,255,255,0.7)", fontSize: "14px", textDecoration: "none", transition: "color 0.2s" }}
                     onMouseEnter={e => { e.currentTarget.style.color = "#ffffff"; }}
                     onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.7)"; }}
                   >
                     {label}
-                  </a>
+                  </Link>
                 ))}
               </div>
 
