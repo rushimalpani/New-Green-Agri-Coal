@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import UseCaseDetail from './pages/UseCaseDetail';
+import KeepAlivePing from './components/KeepAlivePing';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 import { NotFound } from './components/ui/not-found-2';
@@ -8,6 +9,7 @@ import { NotFound } from './components/ui/not-found-2';
 function App() {
   return (
     <Router>
+      <KeepAlivePing />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />

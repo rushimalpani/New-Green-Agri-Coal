@@ -1,6 +1,6 @@
 import { FaWhatsapp } from 'react-icons/fa';
 
-const WHATSAPP_CHAT_URL = 'https://wa.me/919421073059';
+const WHATSAPP_CHAT_URL = 'https://wa.me/918999442896';
 
 function WhatsAppFloatingButton() {
   return (

@@ -46,7 +46,7 @@ export default function Footer() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "c09f6e53-0260-4af9-a1c7-66dd11a4ebb9",
+          access_key: "3d2b2eb9-ea82-4084-a20e-f9529bad4d2d",
           subject: `🌱 New Inquiry from ${formData.name} — New Green Agro Coal`,
           from_name: "New Green Agro Coal Website",
           replyto: formData.email,
@@ -187,10 +187,10 @@ export default function Footer() {
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <span style={{ color: "#86EFAC", flexShrink: 0 }}>📞</span>
                   <a
-                    href="tel:+917058160130"
+                    href="tel:+918483822020"
                     style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none", fontSize: "14px" }}
                   >
-                    +91 70581 60130
+                    +91 - 84 83 82 20 20
                   </a>
                 </div>
               </div>
